@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalade Püüdmine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        #results {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Püütud Kalade Arvestus</h1>
+    <div id="buttons">
+        <button onclick="catchFish('Haug')">Haug</button>
+        <button onclick="catchFish('Ahven')">Ahven</button>
+        <button onclick="catchFish('Latikas')">Latikas</button>
+        <button onclick="catchFish('Särg')">Särg</button>
+        <button onclick="catchFish('Forell')">Forell</button>
+    </div>
+    <div id="results">
+        <h2>Tulemused:</h2>
+        <p id="Haug">Haug: 0</p>
+        <p id="Ahven">Ahven: 0</p>
+        <p id="Latikas">Latikas: 0</p>
+        <p id="Särg">Särg: 0</p>
+        <p id="Forell">Forell: 0</p>
+    </div>
+
+    <script>
+        let fishCounts = {
+            'Haug': 0,
+            'Ahven': 0,
+            'Latikas': 0,
+            'Särg': 0,
+            'Forell': 0
+        };
+
+        function catchFish(fish) {
+            fishCounts[fish]++;
+            document.getElementById(fish).textContent = fish + ': ' + fishCounts[fish];
+        }
+    </script>
+</body>
+</html>
